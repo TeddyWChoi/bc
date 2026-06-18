@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlackShot Coin</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -76,6 +76,10 @@
             <div class="hero-text">
               <p>Introducing <span class="highlight">BlackShot Coin (BC)</span>: The foundation of our new ecosystem.</p>
               <p><span class="highlight">BlackShot Coin (BC)</span> is a new in-game currency earned through combat playtime and weapon disassembly, turning your time and unused resources into meaningful progression and rewards. Designed to support a more accessible free-to-play experience, <span class="highlight">BC</span> lets you purchase items in the dedicated BC Shop, test your luck on the Mega Jackpot Wheel and multiply your BC, and compete in seasonal rankings for exclusive rewards.</p>
+              <div class="cta-row">
+                <a href="#rewards" class="btn btn-gold">See Season Rewards</a>
+                <a href="#earn" class="btn btn-ghost">How BC Works</a>
+              </div>
             </div>
           </div>
 
@@ -104,210 +108,214 @@
               <button class="modal-close" @click="closeVideoModal">✕</button>
             </div>
           </div>
-        </transition>        <!-- Black Coin Section -->
-        <section class="black-coin-section">
-          
-          <!-- Section 1: Earn -->
-          <div class="bc-header">
-            <h1 class="bc-title">
-              <span class="white">How to Earn</span>
-              <span class="green">BC</span>
-            </h1>
-            <div class="bc-desc">
-              <p>There are multiple ways to earn <span class="highlight">BC</span> and the choice is yours!</p>
-              <p class="sub">You can earn <span class="highlight">BC</span> just by playing and that's what makes it innovative! <br/>Simply by jumping into the game, you will be rewarded with <span class="highlight">BC</span>.</p>
+        </transition>
+
+        <!-- REWARDS - SIGNATURE SECTION -->
+        <section class="rewards" id="rewards">
+          <div class="wrap">
+            <div class="sec-head">
+              <span class="ptw-tag">PLAY TO WIN</span>
+              <span class="kicker">BC RANKING · EVERY SEASON</span>
+              <h2>Climb the Ranks.<br /> Win Real Rewards.</h2>
+            </div>
+            <p class="ptw-copy">BC Ranking is our season-long play-to-win competition. Your time, effort, and in-game performance translate into <b>real-life rewards</b>. At the end of every season, the top BC rankers take home gift card prizes.</p>
+
+            <div class="podium">
+              <div class="prize second">
+                <div class="medal"><img src="assets/medal_2nd.png" alt="2nd Place Medal"></div>
+                <div class="place">2nd Place</div>
+                <div class="card-img"><img src="assets/giftcard_2nd_3rd.png" alt="2nd Place Gift Card"></div>
+                <div class="amount">$50</div>
+                <div class="label">Gift Card</div>
+              </div>
+              <div class="prize first">
+                <div class="medal"><img src="assets/medal_1st.png" alt="1st Place Medal"></div>
+                <div class="place">1st Place</div>
+                <div class="card-img"><img src="assets/giftcard_1st.png" alt="1st Place Gift Card"></div>
+                <div class="amount">$100</div>
+                <div class="label">Gift Card</div>
+              </div>
+              <div class="prize third">
+                <div class="medal"><img src="assets/medal_3rd.png" alt="3rd Place Medal"></div>
+                <div class="place">3rd Place</div>
+                <div class="card-img"><img src="assets/giftcard_2nd_3rd.png" alt="3rd Place Gift Card"></div>
+                <div class="amount">$30</div>
+                <div class="label">Gift Card</div>
+              </div>
+            </div>
+
+            <div class="closer">
+              <div class="line">Play BlackShot <span class="sep">·</span> Earn BC <span class="sep">·</span> Climb the Rankings <span class="sep">·</span> Win Big</div>
             </div>
           </div>
-          <div class="steps-container">
-            <!-- Step 1 -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step1.webp'">
-                <img src="assets/step1.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
+        </section>
+
+        <!-- HOW TO EARN -->
+        <section class="how" id="earn">
+          <div class="sec-head">
+            <span class="kicker">STEP 01 · EARN</span>
+            <h2>How to Earn <span class="gold">BC</span></h2>
+            <p>There are multiple ways to earn BC, and the simplest one is just to play. Jump into a match and you're already earning.</p>
+          </div>
+          <div class="wrap">
+            <div class="cards">
+              <div class="card">
+                <div class="shot" @click="selectedImage = 'assets/step1.webp'">
+                  <img src="assets/step1.webp" alt="Earn BC by playing matches">
+                  <div class="shot-overlay">
+                    <span>In-match · BC pickup</span>
+                  </div>
+                  <div class="expand-icon">⛶</div>
+                </div>
+                <div class="body">
+                  <h3>Earn BC by playing matches</h3>
+                  <p>You earn BC based on your playtime during matches. The more you play, the more you earn.</p>
+                  <p class="note">1 BC is collected every 4 minutes of gameplay. BC is not awarded if you abandon the match.</p>
+                </div>
               </div>
-              <div class="step-text">
-                <div class="step-number"></div>
-                <div class="step-content">
-                  You will earn BC based on your playtime during matches.
-                  <span class="secondary">(* 1 BC is collected every 4 minutes of gameplay.)</span>
-                  <span class="secondary">(** BC will not be awarded if you abandon the match.)</span>
+              <div class="card">
+                <div class="shot" @click="selectedImage = 'assets/step2.webp'">
+                  <img src="assets/step2.webp" alt="Track earnings on the results screen">
+                  <div class="shot-overlay">
+                    <span>Results screen · earnings</span>
+                  </div>
+                  <div class="expand-icon">⛶</div>
+                </div>
+                <div class="body">
+                  <h3>Track earnings on the results screen</h3>
+                  <p>Check exactly how much BC you earned at the end of every match on the results screen.</p>
+                  <p class="note">When a BC Boost event is active, you'll see BC raining across the screen.</p>
                 </div>
               </div>
             </div>
-            <!-- Step 2 -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step2.webp'">
-                <img src="assets/step2.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-number"></div>
-                <div class="step-content">
-                  You can view the amount you earned on the results screen.
-                  <span class="secondary">(* BC Boost event is active when BCs are raining on screen.)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-<div class="bc-header">
-           
-            <div class="bc-desc">
             
-              <p class="sub">Got too many unused weapons collecting dust? <br/>Break them down and turn them into <span class="highlight">BC</span>!</p>
-            </div>
-          </div>
-          <div class="steps-container">
-            <!-- Step 3 -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step3.webp'">
-                <img src="assets/step3.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
+            <p class="sub-lead">
+              Got too many unused weapons collecting dust? Break them down and turn them into BC.
+            </p>
+            
+            <div class="cards">
+              <div class="card">
+                <div class="shot" @click="selectedImage = 'assets/step3.webp'">
+                  <img src="assets/step3.webp" alt="Dismantle weapons into BC">
+                  <div class="shot-overlay">
+                    <span>Loadout · Dismantle</span>
+                  </div>
+                  <div class="expand-icon">⛶</div>
+                </div>
+                <div class="body">
+                  <h3>Dismantle weapons into BC</h3>
+                  <p>Dismantling is done in your Loadout, and only unused weapons purchased with Gems can be dismantled.</p>
+                  <p class="note">BC gained depends on the tier, duration, and type of each weapon.</p>
+                </div>
               </div>
-              <div class="step-text">
-                <div class="step-number"></div>
-                <div class="step-content">
-                  Weapon dismantling can be done in your LOADOUT, and only unused weapons purchased with gems can be dismantled.
-                  <span class="secondary">(* Amount of BC gained from disassembling depends on the tier, duration and types of each weapons.)</span>
+              <div class="card">
+                <div class="shot" @click="selectedImage = 'assets/step4.webp'">
+                  <img src="assets/step4.webp" alt="See the BC you earned from dismantling">
+                  <div class="shot-overlay">
+                    <span>Dismantle · BC result</span>
+                  </div>
+                  <div class="expand-icon">⛶</div>
+                </div>
+                <div class="body">
+                  <h3>See the BC you earned from dismantling</h3>
+                  <p>This window displays the BC obtained from dismantling your weapons.</p>
+                  <p class="note">Dismantling cannot be reversed.</p>
                 </div>
               </div>
             </div>
-            <!-- Step 4 -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step4.webp'">
-                <img src="assets/step4.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-number"></div>
-                <div class="step-content">
-                  This window will display the BC obtained from dismantling your weapons.
-                  <span class="secondary">(* You cannot revert the dismantling process.)</span>
-                </div>
-              </div>
-            </div>
           </div>
+        </section>
 
-          <!-- Section 2: Use -->
-          <div class="bc-header">
-            <h1 class="bc-title">
-              <span class="white">How to Use</span>
-              <span class="green">BC</span>
-            </h1>
-            <div class="bc-desc">
-              <p>Your earned BC can be spent in the <span class="highlight">BC Shop</span> and the <span class="highlight">Mega Jackpot Wheel</span>.</p>
-              <p class="sub">Head into battle and gear up at the <span class="highlight">BC Shop</span>: Every item within your reach are earned through your own play and dedication.</p>
-              <p class="sub">Are you feeling lucky? Then put your luck to the test at the <span class="highlight">Mega Jackpot Wheel</span>. Wager your BC for a chance to multiply your total BC balance! Fortune favors the bold — a life-changing haul could be just one spin away.</p>
-            </div>
+        <!-- HOW TO USE -->
+        <section class="how use-section">
+          <div class="sec-head">
+            <span class="kicker">STEP 02 · USE</span>
+            <h2>How to Use <span class="gold">BC</span></h2>
+            <p>Your earned BC can be spent in the BC Shop and on our Mega Jackpot Games.</p>
           </div>
-          <div class="steps-container">
-            <!-- Step 5 (No Number) -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step5.webp'">
-                <img src="assets/step5.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-content">
-                 You can spend your BC to claim rewards in the BC Shop.
- <span class="secondary">
-(* Some items will have a limited quantity per server.)
-(** Some items will have a purchase limit per character.)</span>
+          <div class="wrap">
+            <div class="cards">
+              <div class="card">
+                <div class="shot" @click="selectedImage = 'assets/step5.webp'">
+                  <img src="assets/step5.webp" alt="Spend your BC in the BC Shop">
+                  <div class="shot-overlay">
+                    <span>BC Shop</span>
+                  </div>
+                  <div class="expand-icon">⛶</div>
+                </div>
+                <div class="body">
+                  <h3>Spend your BC in the BC Shop</h3>
+                  <p>Head into battle and gear up at the BC Shop. Every item is within your reach, earned through your own play and dedication.</p>
+                  <p class="note">Some items have a limited quantity per server, and some have a purchase limit per character.</p>
                 </div>
               </div>
-            </div>
-            <!-- Step 6 (No Number) -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step6.webp'">
-                <img src="assets/step6.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-content">
-                 Spin the Mega Jackpot Wheel directly on our webpage! Wager your BC and go for the big win! But watch out.... You might land on nothing!
+              <div class="card">
+                <div class="shot" @click="selectedImage = 'assets/step6.webp'">
+                  <img src="assets/step6.webp" alt="Play the Mega Jackpot Games">
+                  <div class="shot-overlay">
+                    <span>Mega Jackpot Games</span>
+                  </div>
+                  <div class="expand-icon">⛶</div>
+                </div>
+                <div class="body">
+                  <h3>Play the Mega Jackpot Games</h3>
+                  <p>Feeling lucky? Wager your BC on our Mega Jackpot Games for a chance to multiply your balance, right here on the webpage.</p>
+                  <p class="note">Fortune favors the bold, but watch out, you might land on nothing.</p>
                 </div>
               </div>
             </div>
           </div>
+        </section>
 
-          <!-- Section 3: Ranking -->
-          <div class="bc-header">
-            <h1 class="bc-title">
-              <span class="green">BC</span>
-              <span class="white2">Ranking and Rewards</span>
-            </h1>
-            <div class="bc-desc">
-              <p>Check your ranking on the <span class="highlight">BC Ranking</span> page!</p>
-              <p class="sub">Compete with your rivals in a fair and friendly battle for the top. Reach the higher ranks and claim your rewards at the end of each season!</p>
+        <!-- SEASON RULES + TERMS -->
+        <section class="season">
+          <div class="wrap">
+            <div class="sec-head">
+              <span class="kicker">BC RANKING · EVERY SEASON</span>
+              <h2>How <span class="gold">BC Ranking</span> Works</h2>
+              <p>BC Ranking is our ongoing play-to-win competition, running every season. Reach the top and claim your reward at season's end.</p>
             </div>
-          </div>
 
-          <div class="steps-container">
-            <!-- Step 7 (No Number) -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step7.webp'">
-                <img src="assets/step7.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-content">
-                 You can view your BC Balance on the BC Ranking page in-game.
- <span class="secondary">
-(* Different rewards (real items and/or in-game items) will be given at the end of each season depending on your final rank.)<br/>(** Ranking is based on your highest BC balance reached during the season, not the balance you currently hold.)</span>
-                </div>
-              </div>
-            </div>
-            <!-- Step 8 (No Number) -->
-            <div class="step-item">
-              <div class="step-image" @click="selectedImage = 'assets/step8.webp'">
-                <img src="assets/step8.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-content">
-                 You can also check your BC Rank directly from our BlackShot website!
-                  <span class="secondary">(* Ranking board is updated daily, not in real-time and may not reflect the exact highest amount you have earned.)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="steps-container">
-            <div class="step-item last-step">
-            <div class="step-image" @click="selectedImage = 'assets/step9.webp'">
-                <img src="assets/step9.webp" alt="">
-                <div class="step-overlay"></div>
-                <div class="expand-icon">⛶</div>
-              </div>
-              <div class="step-text">
-                <div class="step-content">
-                  
-                  <a href="#" class="ranking-btn">GO TO BC RANKING →</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
-
-          <div class="notice-box">
-            <div class="notice-content">
-              <div class="notice-icon">⚠</div>
+            <div class="notes">
+              <h3>Season Notes</h3>
               <ul>
-                <li class="warning">All BCs will be reset at the end of each season.</li>
-                <li>• BC acquisition rates may be different per season.</li>
-                <li>• BC Shop will be updated every season.</li>
-                <li>• BC Ranking Page is updated once per day.</li>
-                 <li>• BC Ranking rewards are subject to change.</li>
+                <li>All BC is reset at the end of each season.</li>
+                <li>BC acquisition rates may differ per season.</li>
+                <li>The BC Shop is updated every season.</li>
+                <li>The BC Ranking page is updated once per day (not real-time).</li>
+                <li>Ranking is based on the highest BC balance reached during the season, not your current balance.</li>
+                <li>Top-ranker gift card rewards are awarded every season. Reward types and values are subject to change.</li>
               </ul>
             </div>
+
+            <div class="terms">
+              <details>
+                <summary>Prize Terms &amp; Conditions <span class="chev">▼</span></summary>
+                <div class="tbody">
+                  <ul>
+                    <li>Gift card prizes are delivered via the primary e-mail registered to the winner's Papaya Play account at registration. Any income tax, customs duty, VAT, or other taxes or fees that apply based on the winner's country or region are the sole responsibility of the winner.</li>
+                    <li>Winners may be required to submit a verification photo, identification document, or other materials to receive their prize. Failure to respond to or comply with a verification request may result in cancellation of the prize and disqualification.</li>
+                    <li>Accurate account information must be provided to receive the prize. Papaya Play is not responsible for issues caused by inaccurate, incomplete, or outdated information provided by the winner.</li>
+                    <li>Winners are contacted only through the primary e-mail registered to their Papaya Play account, never a secondary e-mail.<span class="fine">Please ensure your primary e-mail is valid and accessible. Accounts using temporary or disposable e-mail addresses may be unable to receive their prize.</span></li>
+                    <li>Users under the age of 13 are not eligible to participate.<span class="fine">If you are under 18, parental or legal guardian verification and consent are required to receive the prize.</span></li>
+                    <li>Gift cards are region-locked and may not be available in all countries. Where unavailable, Papaya Play may instead grant an equivalent value in Gems to the winner's account.<span class="fine">Gift cards must be claimed within 5 days of the prize e-mail being sent; restrictions may apply afterward. Once received, gift cards must be used within 1 year. Papaya Play is not responsible for unused balance, expired value, or delivery issues caused by user negligence or incorrect account/e-mail information.</span></li>
+                    <li>Any suspicious activity, cheating, abuse, or violation of the Terms of Service results in disqualification.</li>
+                    <li>Reward types and values are subject to change in future seasons.</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
           </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="final">
+          <div class="wrap">
+            <h2>The race for the top continues.</h2>
+            <p>Check the standings, see where you rank, and claim your reward at season's end.</p>
+            <a href="#" class="btn btn-gold">Go to BC Ranking →</a>
+          </div>
+        </section>         </div>
         </section>
 
         <!-- Image Modal -->
@@ -322,8 +330,6 @@
           </div>
         </transition>
 
-        <!-- Footer -->
-        <footer class="footer"></footer>
       </div>
     </div>
     `,
