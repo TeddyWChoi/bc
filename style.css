@@ -922,7 +922,7 @@ section {
 @media (max-width: 640px) {
     .boost-comparison {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
 
     .boost-before,
@@ -932,19 +932,22 @@ section {
     }
 
     .boost-arrow-wrap {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         gap: 12px;
-        padding: 4px 0;
+        padding: 10px 0;
     }
 
     .boost-arrow {
-        width: 90px;
-        height: 34px;
+        width: 100px;
+        height: 38px;
         transform: rotate(90deg);
+        margin: 16px 0;
+        animation: arrowPulseMobile 2s ease-in-out infinite;
     }
 
     .boost-arrow-label {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .coin-float-text {
@@ -954,6 +957,11 @@ section {
     .coin-float-text.coin-float-boost {
         font-size: 24px;
     }
+}
+
+@keyframes arrowPulseMobile {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5)); transform: rotate(90deg) translateY(0); }
+    50% { filter: drop-shadow(0 0 22px rgba(245, 158, 11, 0.9)); transform: rotate(90deg) translateY(6px); }
 }
 
 @media (min-width: 641px) {
