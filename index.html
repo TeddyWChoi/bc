@@ -54,7 +54,28 @@
       el: '#app',
       data: {
         isVideoOpen: false,
-        selectedImage: null
+        selectedImage: null,
+        rankRewards: [
+          { rank: '1',      gem: '2000', set: 'Set A', setAmt: '1', items: [['Premium Gacha Coupon', '2'], ['Complete Gacha Coupon', '2'], ['Collection Gacha Coupon', '2']] },
+          { rank: '2',      gem: '1500', set: 'Set B', setAmt: '1', items: [['Premium Gacha Coupon', '2'], ['Complete Gacha Coupon', '2'], ['Collection Gacha Coupon', '2']] },
+          { rank: '3',      gem: '1000', set: 'Set B', setAmt: '1', items: [['Premium Gacha Coupon', '2'], ['Complete Gacha Coupon', '2'], ['Collection Gacha Coupon', '2']] },
+          { rank: '4-5',    gem: '500',  set: 'Set B', setAmt: '1', items: [['Premium Gacha Coupon', '1'], ['Complete Gacha Coupon', '1'], ['Collection Gacha Coupon', '2']] },
+          { rank: '6-10',   gem: '0',    set: 'Set C', setAmt: '1', items: [['Premium Gacha Coupon', '1'], ['Complete Gacha Coupon', '1'], ['Collection Gacha Coupon', '1']] },
+          { rank: '11-15',  gem: '400',  set: '-',     setAmt: '-', items: [['Premium Gacha Coupon', '1'], ['Complete Gacha Coupon', '1'], ['Collection Gacha Coupon', '1']] },
+          { rank: '16-20',  gem: '100',  set: '-',     setAmt: '-', items: [['Random Box A', '2'], ['Random Box B', '2'], ['-', '-']] },
+          { rank: '21-29',  gem: '0',    set: '-',     setAmt: '-', items: [['Random Box A', '1'], ['Random Box B', '1'], ['500 BC', '1']] },
+          { rank: '30',     gem: '0',    set: '-',     setAmt: '-', items: [['Premium Gacha Coupon', '1'], ['Complete Gacha Coupon', '1'], ['Collection Gacha Coupon', '1']] },
+          { rank: '31-39',  gem: '0',    set: '-',     setAmt: '-', items: [['Random Box A', '1'], ['Random Box B', '1'], ['300 BC', '1']] },
+          { rank: '40',     gem: '0',    set: '-',     setAmt: '-', items: [['Premium Gacha Coupon', '1'], ['Complete Gacha Coupon', '1'], ['-', '-']] },
+          { rank: '41-44',  gem: '200',  set: '-',     setAmt: '-', items: [['Premium Gacha Coupon', '1'], ['-', '-'], ['-', '-']] },
+          { rank: '45-49',  gem: '200',  set: '-',     setAmt: '-', items: [['-', '-'], ['Complete Gacha Coupon', '1'], ['-', '-']] },
+          { rank: '50',     gem: '0',    set: '-',     setAmt: '-', items: [['Premium Gacha Coupon', '1'], ['Complete Gacha Coupon', '1'], ['-', '-']] },
+          { rank: '51-60',  gem: '0',    set: '-',     setAmt: '-', items: [['Random Box A', '1'], ['Random Box B', '1'], ['-', '-']] },
+          { rank: '61-70',  gem: '0',    set: '-',     setAmt: '-', items: [['500 BC', '1'], ['-', '-'], ['-', '-']] },
+          { rank: '71-80',  gem: '0',    set: '-',     setAmt: '-', items: [['Complete Gacha Coupon', '1'], ['Collection Gacha Coupon', '1'], ['-', '-']] },
+          { rank: '81-90',  gem: '0',    set: '-',     setAmt: '-', items: [['300 BC', '1'], ['-', '-'], ['-', '-']] },
+          { rank: '91-100', gem: '0',    set: '-',     setAmt: '-', items: [['Complete Gacha Coupon', '1'], ['Collection Gacha Coupon', '1'], ['-', '-']] }
+        ]
       },
       template: `
     <div class="app-container">
@@ -116,31 +137,31 @@
             <div class="sec-head">
               <span class="ptw-tag">PLAY TO WIN</span>
               <span class="kicker">BC RANKING · EVERY SEASON</span>
-              <h2>Climb the Ranks.<br /> Win Real Rewards.</h2>
+              <h2>Climb the Ranks.<br /> Win Ranking Rewards.</h2>
             </div>
-            <p class="ptw-copy">BC Ranking is our season-long play-to-win competition. Your time, effort, and in-game performance translate into <b>real-life rewards</b>. At the end of every season, the top BC rankers take home gift card prizes.</p>
+            <p class="ptw-copy">The BC Ranking is a tournament that challenges you to go all the way to victory throughout the season. Turn your time, effort, and in-game achievements into <b>BC Ranking rewards</b>.</p>
 
             <div class="podium">
               <div class="prize second">
                 <div class="medal"><img src="assets/medal_2nd.png" alt="2nd Place Medal"></div>
                 <div class="place">2nd Place</div>
-                <div class="card-img"><img src="assets/giftcard_2nd_3rd.png" alt="2nd Place Gift Card"></div>
-                <div class="amount">$50</div>
-                <div class="label">Gift Card</div>
+                <div class="card-img"><img src="assets/gembox_2nd.webp" alt="2nd Place Gem Reward"></div>
+                <div class="amount">1500</div>
+                <div class="label">Gem</div>
               </div>
               <div class="prize first">
                 <div class="medal"><img src="assets/medal_1st.png" alt="1st Place Medal"></div>
                 <div class="place">1st Place</div>
-                <div class="card-img"><img src="assets/giftcard_1st.png" alt="1st Place Gift Card"></div>
-                <div class="amount">$100</div>
-                <div class="label">Gift Card</div>
+                <div class="card-img"><img src="assets/gembox_1st.webp" alt="1st Place Gem Reward"></div>
+                <div class="amount">2000</div>
+                <div class="label">Gem</div>
               </div>
               <div class="prize third">
                 <div class="medal"><img src="assets/medal_3rd.png" alt="3rd Place Medal"></div>
                 <div class="place">3rd Place</div>
-                <div class="card-img"><img src="assets/giftcard_2nd_3rd.png" alt="3rd Place Gift Card"></div>
-                <div class="amount">$30</div>
-                <div class="label">Gift Card</div>
+                <div class="card-img"><img src="assets/gembox_3rd.webp" alt="3rd Place Gem Reward"></div>
+                <div class="amount">1000</div>
+                <div class="label">Gem</div>
               </div>
             </div>
 
@@ -155,23 +176,18 @@
                 <div class="section-heading__content">
                   <span class="bullet-dot" aria-hidden="true">◈</span>
                   <h3 id="ingame-heading" class="section-heading__title">
-                    EXCLUSIVE IN-GAME ITEMS FOR TOP 25 RANKS
+                    EXCLUSIVE IN-GAME ITEMS FOR TOP 100 RANKS
                   </h3>
                   <span class="bullet-dot" aria-hidden="true">◈</span>
                 </div>
                 <div class="section-heading__line section-heading__line--end" aria-hidden="true"></div>
               </div>
 
-              <div class="tier-table fade-in-up">
-                <!-- Tier 01 – Legend -->
-                <div class="tier-row tier-row--legend" id="tier-legend">
-                  <div class="tier-row__label">
-                    <span class="tier-badge">TIER 01</span>
-                    <span class="tier-row__rank tier-row__rank--gold">1st ~ 3rd Place</span>
-                    <span class="tier-row__receives">receives</span>
-                  </div>
-                  <div class="tier-row__divider" aria-hidden="true"></div>
-                  <div class="tier-row__items">
+              <div class="set-grid fade-in-up">
+                <!-- Set A -->
+                <div class="set-card set-card--legend" id="set-a">
+                  <span class="set-card__badge set-card__badge--gold">Set A</span>
+                  <div class="set-card__items">
                     <div class="tier-item tier-item--legend" aria-label="Helmet">
                       <div class="tier-item__img-wrap">
                         <div class="tier-item__glow"></div>
@@ -196,15 +212,10 @@
                   </div>
                 </div>
 
-                <!-- Tier 02 – Master -->
-                <div class="tier-row tier-row--master" id="tier-master">
-                  <div class="tier-row__label">
-                    <span class="tier-badge">TIER 02</span>
-                    <span class="tier-row__rank tier-row__rank--silver">4th ~ 10th Place</span>
-                    <span class="tier-row__receives">receives</span>
-                  </div>
-                  <div class="tier-row__divider" aria-hidden="true"></div>
-                  <div class="tier-row__items">
+                <!-- Set B -->
+                <div class="set-card set-card--master" id="set-b">
+                  <span class="set-card__badge set-card__badge--silver">Set B</span>
+                  <div class="set-card__items">
                     <div class="tier-item tier-item--master" aria-label="Helmet">
                       <div class="tier-item__img-wrap">
                         <div class="tier-item__glow"></div>
@@ -229,15 +240,10 @@
                   </div>
                 </div>
 
-                <!-- Tier 03 – Elite -->
-                <div class="tier-row tier-row--elite" id="tier-elite">
-                  <div class="tier-row__label">
-                    <span class="tier-badge">TIER 03</span>
-                    <span class="tier-row__rank tier-row__rank--bronze">11th ~ 25th Place</span>
-                    <span class="tier-row__receives">receives</span>
-                  </div>
-                  <div class="tier-row__divider" aria-hidden="true"></div>
-                  <div class="tier-row__items">
+                <!-- Set C -->
+                <div class="set-card set-card--elite" id="set-c">
+                  <span class="set-card__badge set-card__badge--bronze">Set C</span>
+                  <div class="set-card__items">
                     <div class="tier-item tier-item--elite" aria-label="Helmet">
                       <div class="tier-item__img-wrap">
                         <div class="tier-item__glow"></div>
@@ -260,6 +266,40 @@
                       <span class="tier-item__label">Taunt</span>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <!-- Rank Reward Table -->
+              <div class="reward-table-block fade-in-up">
+                <div class="reward-table-scroll">
+                  <table class="reward-table">
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Reward Gem</th>
+                        <th>Reward Set</th>
+                        <th>Amount</th>
+                        <th>Reward Item 1</th>
+                        <th>Amount</th>
+                        <th>Reward Item 2</th>
+                        <th>Amount</th>
+                        <th>Reward Item 3</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="row in rankRewards" :key="row.rank" :class="{ 'is-top': ['1','2','3'].includes(row.rank) }">
+                        <td class="rt-rank">{{ row.rank }}</td>
+                        <td class="rt-gem" :class="{ 'rt-dash': row.gem === '0' }">{{ row.gem }}</td>
+                        <td class="rt-set" :class="{ 'rt-dash': row.set === '-' }">{{ row.set }}</td>
+                        <td :class="{ 'rt-dash': row.setAmt === '-' }">{{ row.setAmt }}</td>
+                        <template v-for="(item, idx) in row.items">
+                          <td class="rt-item" :class="{ 'rt-dash': item[0] === '-' }" :key="row.rank + '-n' + idx">{{ item[0] }}</td>
+                          <td :class="{ 'rt-dash': item[1] === '-' }" :key="row.rank + '-a' + idx">{{ item[1] }}</td>
+                        </template>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

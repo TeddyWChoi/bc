@@ -608,7 +608,7 @@ section {
     margin: 18px auto 16px;
     width: 100%;
     max-width: 180px; /* default base size (2nd & 3rd place on mobile) */
-    aspect-ratio: 1.6/1;
+    aspect-ratio: 1/1; /* gem box renders are square */
     display: grid;
     place-items: center;
     position: relative;
@@ -1854,6 +1854,234 @@ section {
     font-size: 12px;
     letter-spacing: 0.25em;
   }
+}
+
+/* ---------- Set Cards (Set A / B / C) ---------- */
+.set-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 1080px;
+}
+
+@media (min-width: 768px) {
+  .set-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.set-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 16px 20px;
+  border-radius: 12px;
+  border: 1px solid;
+  background: linear-gradient(180deg,
+      var(--tier-bg, rgba(245, 180, 60, 0.06)),
+      rgba(0, 0, 0, 0.55));
+  transition: border-color 0.3s, transform 0.3s;
+  z-index: 1;
+}
+
+.set-card:hover {
+  z-index: 10;
+  transform: translateY(-2px);
+}
+
+.set-card--legend {
+  --tier-bg: rgba(245, 180, 60, 0.08);
+  border-color: rgba(245, 180, 60, 0.25);
+}
+
+.set-card--legend:hover {
+  border-color: rgba(245, 180, 60, 0.5);
+}
+
+.set-card--master {
+  --tier-bg: rgba(200, 200, 200, 0.07);
+  border-color: rgba(160, 160, 160, 0.25);
+}
+
+.set-card--master:hover {
+  border-color: rgba(160, 160, 160, 0.5);
+}
+
+.set-card--elite {
+  --tier-bg: rgba(180, 80, 20, 0.1);
+  border-color: rgba(130, 50, 10, 0.3);
+}
+
+.set-card--elite:hover {
+  border-color: rgba(180, 80, 40, 0.55);
+}
+
+.set-card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 18px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.set-card__badge--gold {
+  background: linear-gradient(90deg, var(--gold-200), var(--gold-500));
+  color: #000;
+  box-shadow: 0 0 16px rgba(245, 180, 60, 0.4);
+}
+
+.set-card__badge--silver {
+  background: linear-gradient(90deg, #e4e4e7, #a1a1aa);
+  color: #000;
+  box-shadow: 0 0 16px rgba(200, 200, 200, 0.3);
+}
+
+.set-card__badge--bronze {
+  background: linear-gradient(90deg, #fb923c, #c2540a);
+  color: #000;
+  box-shadow: 0 0 16px rgba(180, 80, 20, 0.4);
+}
+
+.set-card__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 0 0;
+}
+
+.set-card .tier-item {
+  flex: 1;
+}
+
+.set-card .tier-item__img-wrap {
+  width: 76px;
+  height: 76px;
+}
+
+@media (min-width: 640px) {
+  .set-card .tier-item__img-wrap {
+    width: 92px;
+    height: 92px;
+  }
+}
+
+.set-card:hover .tier-item__glow {
+  opacity: 1;
+}
+
+.set-card .tier-item:hover .tier-item__img {
+  transform: scale(1.8);
+}
+
+/* ---------- Rank Reward Table ---------- */
+.reward-table-block {
+  width: 100%;
+  max-width: 1080px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg,
+      rgba(24, 24, 27, 0.85),
+      rgba(0, 0, 0, 0.92));
+  padding: 8px;
+  margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .reward-table-block {
+    padding: 16px;
+  }
+}
+
+.reward-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+}
+
+.reward-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+  color: #d7dbe4;
+}
+
+.reward-table th {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-soft, #f0cf8e);
+  background: rgba(245, 180, 60, 0.08);
+  border-bottom: 1px solid rgba(245, 180, 60, 0.3);
+  padding: 12px 10px;
+  white-space: nowrap;
+}
+
+.reward-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.reward-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.reward-table tbody tr:hover {
+  background: rgba(245, 180, 60, 0.05);
+}
+
+.reward-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reward-table .rt-rank {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.reward-table .rt-gem {
+  color: var(--gold-soft, #f0cf8e);
+  font-weight: 600;
+}
+
+.reward-table .rt-set {
+  font-weight: 600;
+}
+
+.reward-table .rt-dash {
+  color: var(--zinc-600);
+  font-weight: 400;
+}
+
+.reward-table tr.is-top .rt-rank {
+  color: var(--gold-300);
+  text-shadow: 0 0 10px rgba(245, 180, 60, 0.5);
+}
+
+.reward-table tr.is-top {
+  background: rgba(245, 180, 60, 0.04);
 }
 
 /* ---------- Animations ---------- */
